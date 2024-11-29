@@ -1,0 +1,18 @@
+.mainpage_container {
+    height: 100vh;
+    background-color: #EFF2F5;
+    padding-top: 16px;
+}
+
+.leftContainer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.middleContainer {
+    margin-left: 50px !important;
+    margin-right: 80px !important;
+    overflow-y: scroll;
+    height: 100vh; 
+    max-width: 600px !important;
+}

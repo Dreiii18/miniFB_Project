@@ -1,0 +1,26 @@
+services:
+  client:
+    build:
+      context: ./client  # Path to the client directory
+    volumes:
+      - ./client:/app  # Mount client directory for hot-reloading
+      - /app/node_modules  # Prevent host's `node_modules` conflict
+    ports:
+      - "3000:3000"  # Expose client on port 3000
+    environment:
+      NPM_SCRIPT: dev
+    stdin_open: true
+    tty: true  # For better interaction with the container
+
+  server:
+    build:
+      context: ./server  # Path to the server directory
+    volumes:
+      - ./server:/app  # Mount server directory for hot-reloading
+      - /app/node_modules  # Prevent host's `node_modules` conflict
+    ports:
+      - "3500:3500"  # Expose server on port 3500
+    environment:
+      NPM_SCRIPT: dev
+    stdin_open: true
+    tty: true
